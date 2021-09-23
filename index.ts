@@ -1,13 +1,13 @@
 import { config } from 'dotenv';
 config();
 
-/* if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   require('module-alias/register');
-} */
+}
 
 import { Client, Intents } from 'discord.js';
-import { bootstrap } from './src/commands';
-import { scdl } from './src/services/soundcloud';
+import { bootstrap } from './commands';
+import { scdl } from './services/soundcloud';
 import express, { Request, Response } from 'express';
 import herokuAwake from 'heroku-awake';
 
@@ -24,7 +24,7 @@ client.on('ready', () => {
   console.log(`> Bot is on ready`);
 });
 
-client.login(TOKEN).then(async () => {
+client.login(process.env.TOKEN).then(async () => {
   await scdl.connect();
   bootstrap(client);
 });
@@ -39,5 +39,5 @@ app.get('/', (_req: Request, res: Response) => {
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`> Bot is on listening`);
-  herokuAwake(APP_URL || 'http://localhost:3000');
+  herokuAwake(process.env.APP_URL || 'http://localhost:3000');
 });

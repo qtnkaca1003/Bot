@@ -1,10 +1,10 @@
 import { config } from 'dotenv';
 config();
 
-if (process.env.NODE_ENV === 'production') {
+if ("process.env.NODE_ENV" === 'production') {
   require('module-alias/register');
 }
-
+require('module-alias/register');
 import { Client, Intents } from 'discord.js';
 import { bootstrap } from './commands';
 import { scdl } from './services/soundcloud';

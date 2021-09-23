@@ -6,8 +6,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 import { Client, Intents } from 'discord.js';
-import { bootstrap } from './commands';
-import { scdl } from './services/soundcloud';
+import { bootstrap } from './src/commands';
+import { scdl } from './src/services/soundcloud';
 import express, { Request, Response } from 'express';
 import herokuAwake from 'heroku-awake';
 

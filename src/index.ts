@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 config();
 
-if ("production" === 'production') {
+if (process.env.NODE_ENV === 'production') {
   require('module-alias/register');
 }
 

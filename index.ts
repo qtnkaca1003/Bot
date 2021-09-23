@@ -24,7 +24,7 @@ client.on('ready', () => {
   console.log(`> Bot is on ready`);
 });
 
-client.login(process.env.TOKEN).then(async () => {
+client.login(TOKEN).then(async () => {
   await scdl.connect();
   bootstrap(client);
 });
@@ -39,5 +39,5 @@ app.get('/', (_req: Request, res: Response) => {
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`> Bot is on listening`);
-  herokuAwake(process.env.APP_URL || 'http://localhost:3000');
+  herokuAwake(APP_URL || 'http://localhost:3000');
 });

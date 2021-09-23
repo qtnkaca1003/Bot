@@ -40,5 +40,10 @@
   },
   "_moduleAliases": {
     "@": "dist"
+  },
+  "engines": {
+    "npm": "^7.24.0",
+    "node":"^16.10.0"
   }
+
 }
